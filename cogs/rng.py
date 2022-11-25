@@ -1,7 +1,5 @@
 import random
-import time
 
-import discord
 from discord.ext import commands
 
 
@@ -16,6 +14,7 @@ class rng(commands.Cog):
 
     @commands.command(aliases=["8ball"])
     async def _8ball(self, ctx, *, question):
+        """Responds to a question with a 8-ball response."""
         responses = [
             "As I see it, yes.",
             "Ask again later.",
@@ -40,24 +39,22 @@ class rng(commands.Cog):
         ]
         await ctx.send(f"Question: {question}\nAnswer: {random.choice(responses)}")
 
-    # flips a coin
     @commands.command()
     async def cf(self, ctx):
-        random.seed(time.time())
+
+        """Flips a coin."""
         coin = random.choice(["Heads", "Tails"])
         await ctx.send(f"{coin}")
 
-    # generates a random number from min to max (enclusive)
     @commands.command()
-    async def rand(self, ctx, min=1, max=10):
-        random.seed(time.time())
-        num = str(random.randint(int(min), int(max)))
+    async def rand(self, ctx, min, max):
+        """Generates a random number from min to max (inclusive)."""
+        num = random.randint(int(min), int(max))
         await ctx.send(num)
 
-    # generates a random float between 0 and 1 (enclusive)
     @commands.command()
     async def float(self, ctx):
-        random.seed(time.time())
+        """Generates a random float between 0 and 1 (inclusive)"""
         await ctx.send(random.random())
 
 

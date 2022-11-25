@@ -1,9 +1,12 @@
-# ottbot_v2
+# Ottbot v1
 
-This is the oldest version of my discord bot I could find, I think I created the
-original ottbot v1 before I started using git.
+This is the original version of my discord bot. It doesn't follow good coding
+principles so don't use this code for reference.
 
-## Ideas
+The loading and unloading system doesn't work and I'm leaving it how it is
+for historical purposes.
+
+## TODO
 
 - Utility
   - Auto Role
@@ -20,4 +23,3 @@ original ottbot v1 before I started using git.
 - Imporvements
   - Join and leave commands
 - vote to unlock more
-
